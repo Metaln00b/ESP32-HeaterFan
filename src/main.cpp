@@ -9,8 +9,8 @@
 #define DUTY_MAX                ((1 << LEDC_TIMER_10_BIT) -1 )
 #define FREQ_MIN_Hz             1 /* Do not decrease it! */
 
-#define FAN_PWM_PIN             4
-#define PSU_ON_PIN              13
+#define FAN_PWM_PIN             19
+#define PSU_ON_PIN              18
 
 #define NTC_PIN                 34
 
