@@ -73,7 +73,7 @@ void power_on(bool turn_on)
 
             digitalWrite(PSU_ON_PIN, HIGH);
 
-            psu_on = !psu_on;
+            psu_on = true;
 
             delay(4000);
 
@@ -85,7 +85,7 @@ void power_on(bool turn_on)
     {
         digitalWrite(PSU_ON_PIN, LOW);
 
-        psu_on = !psu_on;
+        psu_on = false;
     }
 
 }
@@ -115,12 +115,13 @@ void loop() {
 
     Serial.print("Temperature = ");
     Serial.print(temperature);
-    Serial.println(" degC");
+    Serial.print(" degC");
+    Serial.print(" PSU = ");
+    Serial.println(psu_on);
 
     if (temperature > on_temperature_degC)
     {
         power_on(true);
-        
     }
     else if (temperature < off_temperature_degC)
     {
